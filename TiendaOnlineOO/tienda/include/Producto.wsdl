@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap-env="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tienda_wdsl/TiendaOnlineOO/tienda/include" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tienda_wdsl/TiendaOnlineOO/tienda/include">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://tienda_wdsl/TiendaOnlineOO/tienda/include"/>
+    </wsdl:types>
+    <wsdl:message name="getcodigoRequest"/>
+    <wsdl:message name="getcodigoResponse"/>
+    <wsdl:message name="getnombreRequest"/>
+    <wsdl:message name="getnombreResponse"/>
+    <wsdl:message name="getnombrecortoRequest"/>
+    <wsdl:message name="getnombrecortoResponse"/>
+    <wsdl:message name="getPVPRequest"/>
+    <wsdl:message name="getPVPResponse"/>
+    <wsdl:message name="muestraRequest"/>
+    <wsdl:message name="muestraResponse"/>
+    <wsdl:portType name="ProductoPortType">
+        <wsdl:operation name="getcodigo">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:getcodigoRequest"/>
+            <wsdl:output message="tns:getcodigoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getnombre">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:getnombreRequest"/>
+            <wsdl:output message="tns:getnombreResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getnombrecorto">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:getnombrecortoRequest"/>
+            <wsdl:output message="tns:getnombrecortoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPVP">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:getPVPRequest"/>
+            <wsdl:output message="tns:getPVPResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="muestra">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:muestraRequest"/>
+            <wsdl:output message="tns:muestraResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ProductoBinding" type="tns:ProductoPortType">
+        <soap-env:binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getcodigo">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://tienda_wdsl/TiendaOnlineOO/tienda/include/servicio.php?method=getcodigo" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getnombre">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://tienda_wdsl/TiendaOnlineOO/tienda/include/servicio.php?method=getnombre" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getnombrecorto">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://tienda_wdsl/TiendaOnlineOO/tienda/include/servicio.php?method=getnombrecorto" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPVP">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://tienda_wdsl/TiendaOnlineOO/tienda/include/servicio.php?method=getPVP" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="muestra">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://tienda_wdsl/TiendaOnlineOO/tienda/include/servicio.php?method=muestra" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="Producto">
+        <wsdl:documentation/>
+        <wsdl:port name="ProductoPort" binding="tns:ProductoBinding">
+            <soap-env:address location="http://tienda_wdsl/TiendaOnlineOO/tienda/include/servicio.php"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
+

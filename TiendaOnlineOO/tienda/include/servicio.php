@@ -1,13 +1,13 @@
 <?php
+require_once('BD_Proxy.php');
+//require_once 'BD_Proxy.php';
 
-require_once('DB.php');
-
-$uri="http://localhost/tienda_wsdl/TiendaOnlineOO/tienda/include";
+$uri="http://localhost/tienda_wdsl/TiendaOnlineOO/tienda/include";
 
 //$server = new SoapServer(null, array('uri'=>''));
-$server = new SoapServer("$uri/BD.wsdl");
+$server = new SoapServer("$uri/BD_Proxy.wsdl");
 
-$server->setClass('BD');
+$server->setClass('BD_Proxy');
 $server->handle();
 
 //function suma($a,$b){ return $a+$b; }

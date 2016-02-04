@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap-env="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost/tienda_wsdl/TiendaOnlineOO/tienda/soap_con_wsdl/include" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost/tienda_wsdl/TiendaOnlineOO/tienda/soap_con_wsdl/include">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://localhost/tienda_wsdl/TiendaOnlineOO/tienda/soap_con_wsdl/include"/>
+    </wsdl:types>
+    <wsdl:message name="obtienePrecioProductoRequest"/>
+    <wsdl:message name="obtienePrecioProductoResponse"/>
+    <wsdl:portType name="BDPortType">
+        <wsdl:operation name="obtienePrecioProducto">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:obtienePrecioProductoRequest"/>
+            <wsdl:output message="tns:obtienePrecioProductoResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BDBinding" type="tns:BDPortType">
+        <soap-env:binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="obtienePrecioProducto">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/tienda_wdsl/TiendaOnlineOO/tienda/include/servicio.php?method=obtienePrecioProducto" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="BD">
+        <wsdl:documentation/>
+        <wsdl:port name="BDPort" binding="tns:BDBinding">
+            <soap-env:address location="http://localhost/tienda_wsdl/TiendaOnlineOO/tienda/soap_con_wsdl/include/servicio.php"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

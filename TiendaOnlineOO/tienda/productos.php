@@ -1,4 +1,5 @@
 <?php
+//require_once('include/BD_Proxy.php');
 require_once('include/DB.php');
 require_once('include/CestaCompra.php');
 
@@ -28,11 +29,12 @@ function creaFormularioProductos()
 {
     $productos = BD::obtieneProductos();
     
-    $uri = "http://localhost/tienda_soap_ejemplo_basico-master/TiendaOnlineOO/tienda";
-    $url = "$uri/servicio_sin_wdsl.php";
+    $uri = "http://localhost/tienda_wdsl/TiendaOnlineOO/tienda/include";
+    $url = "$uri/servicio.php";
     
-    $cliente = new SoapClient(null, array('location' => $url, 'uri' => $uri,'trace'=>true));
-    
+    //$cliente = new SoapClient(null, array('location' => $url, 'uri' => $uri,'trace'=>true));
+   
+    $cliente = new SoapClient("$uri/BD_Proxy.wsdl");
    
     
     
