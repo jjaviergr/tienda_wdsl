@@ -16,7 +16,7 @@
        $cliente = new SoapClient("$uri/BD_Proxy.wsdl");
 
        
-
+   
 
         $precio = $cliente->obtienePrecioProducto("3DSNG"); //correcto
         echo ("precio " + $precio); // funciona correctamente.
